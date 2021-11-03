@@ -1,0 +1,30 @@
+h1 {
+  font-size: clamp(40px, 4.2vw, 80px);
+  line-height: 1;
+  color: var(--primary-color);
+}
+
+p {
+  font-size: clamp(14px, 2.1vw, 20px);
+  font-weight: 400;
+  color: var(--grey-text-color);
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #000000de;
+}
+
+.subtitle {
+  color: var(--grey-text-color);
+  max-width: 55ch;
+  font-weight: 500;
+  margin: 1em 0 2em 0;
+  font-size: clamp(14px, 0.5rem + 1.25vw, 18px);
+  animation-delay: 400ms;
+}
+
+.paragraph {
+  font-size: 1rem;
+  color: #00000099;
+}

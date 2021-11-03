@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+footer svg {
+  height: 1.75rem;
+  display: block;
+}
+
+footer svg path {
+  fill: var(--grey-color);
+}
