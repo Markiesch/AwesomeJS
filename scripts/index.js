@@ -4,7 +4,7 @@ for (const project of projects) {
   projectSection.innerHTML += `
     <article>
       <a href="projects/${project.title}/" class="image--container">
-        <img src="assets/images/projects/${project.title}.png" alt="${project.title}" />
+        <img src="assets/projects/${project.title}.png" alt="${project.title}" />
       </a>
       <div class="information">
         <h2 class="title">${project.title}</h2>
