@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../../assets/logo.png" type="image/x-icon" />
+    <title>Clamp generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <label for="minWidth">Minimum viewport width</label>
+        <input min="0" name="minWidth" id="minWidth" type="number" value="360" />
+
+        <label for="maxWidth">Maximum viewport width</label>
+        <input min="0" name="maxWidth" id="maxWidth" type="number" value="840" />
+
+        <label for="minFont">Minimum font size</label>
+        <input min="0" name="minFont" id="minFont" type="number" value="1" />
+        <span>rem</span>
+
+        <label for="maxFont">Maximum font size</label>
+        <input min="0" name="maxFont" id="maxFont" type="number" value="3.5" />
+        <span>rem</span>
+
+        <label for="pixels">Pixels per REM</label>
+        <input min="0" name="pixels" id="pixels" type="number" value="16" />
+        <span>px</span>
+      </section>
+      <section class="output">
+        <p class="result"></p>
+        <svg viewBox="0 0 448 512">
+          <path d="M352 96V0H152a24 24 0 0 0-24 24v368a24 24 0 0 0 24 24h272a24 24 0 0 0 24-24V96z"></path>
+          <path
+            d="M96 392V96H24a24 24 0 0 0-24 24v368a24 24 0 0 0 24 24h272a24 24 0 0 0 24-24v-40H152a56.06 56.06 0 0 1-56-56zM441 73L375 7a24 24 0 0 0-17-7h-6v96h96v-6.06A24 24 0 0 0 441 73z"
+          ></path>
+        </svg>
+      </section>
+    </main>
+  </body>
+</html>

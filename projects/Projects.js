@@ -34,4 +34,10 @@ const projects = [
     authorName: "Markiesch",
     authorLink: "https://github.com/Markiesch",
   },
+  {
+    title: "clamp-generator",
+    description: "An easy to use Clamp Generator for the best typography",
+    authorName: "Markiesch",
+    authorLink: "https://github.com/Markiesch",
+  },
 ];
