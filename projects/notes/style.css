@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cad7dd;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+main {
+  background-color: #1d1e23;
+  color: white;
+  min-height: 80vh;
+  max-width: 1440px;
+  width: 80%;
+  margin: 2em;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.menu {
+  border-radius: 20px 0 0 20px;
+  background-color: #27272f;
+  padding: 5em 0.5em 0 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav div {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75em 1em;
+  border-radius: 20px;
+}
+
+.nav svg,
+.nav p {
+  pointer-events: none;
+}
+
+.nav svg {
+  height: 1em;
+  fill: white;
+  margin-right: 1em;
+}
+
+.nav div:hover,
+.nav div:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav .active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.nav p {
+  font-size: 0.8em;
+}
+
+.create--new__container {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1e23;
+  cursor: pointer;
+  margin: 0 0 1.5em 1em;
+}
+
+.create--new__container svg {
+  fill: white;
+  height: 80%;
+}
+
+.editor {
+  padding: 5em 2em 1em 2em;
+  position: relative;
+}
+
+.editor--tab {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.editor input,
+.editor textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.editor input {
+  margin-bottom: 1em;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.editor textarea {
+  resize: none;
+  padding-right: 1em;
+  flex: 1 1 100px;
+  height: 100%;
+}
+
+.editor input:focus,
+.editor textarea:focus {
+  outline: none;
+}
+
+.tab:not(.notes--tab) {
+  display: none;
+}
+
+.notes--tab,
+.favorites--tab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.notes--tab div,
+.favorites--tab div {
+  flex: 0 1 300px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.notes--tab div:hover,
+.favorites--tab div:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.notes--tab h3,
+.notes--tab p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  resize: none;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.notes--tab p {
+  font-size: 0.8rem;
+  margin-top: 1em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.notes--tab h3 {
+  font-size: 1.75rem;
+}
+
+.button--container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+}
+
+.button--container button {
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 0.25em 0.5em;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.button--container svg {
+  height: 2em;
+  opacity: 0.4;
+  fill: #d9d9db;
+}
+
+.button--container svg:hover {
+  opacity: 1;
+}
+
+.favoriteSvg svg {
+  fill: #e64451;
+}
+
+@media screen and (max-width: 1300px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 90vh;
+    min-width: 90vw;
+  }
+
+  .menu {
+    border-radius: 20px 20px 0 0;
+    padding: 0.5em;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  .create--new__container {
+    margin: 0 0.5em;
+  }
+
+  .editor {
+    padding: 2em 2em 1em 2em;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nav p {
+    display: none;
+  }
+  .nav svg {
+    margin: 0;
+  }
+}
