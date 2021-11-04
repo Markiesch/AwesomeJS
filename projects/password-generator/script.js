@@ -1,3 +1,4 @@
+// selecting DOM elements
 const lowerCaseEl = document.getElementById("lowerCase");
 const upperCaseEl = document.getElementById("upperCase");
 const numberEl = document.getElementById("numbers");
@@ -6,13 +7,14 @@ const generateEl = document.querySelector(".generate");
 const passwordEl = document.querySelector(".password");
 const amountEl = document.getElementById("length");
 const copyEl = document.querySelector(".input--container svg");
+
 let length = 15;
 
-amountEl.addEventListener("change", () => {
-  length = amountEl.value;
-});
-
+// Event Listeners
+amountEl.addEventListener("change", () => (length = amountEl.value));
 generateEl.addEventListener("click", generatePassword);
+copyEl.addEventListener("click", copyPassword);
+
 function generatePassword() {
   let lowerCase = "abcdefghijklmnopqrstuvwxyz";
   let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -25,9 +27,7 @@ function generatePassword() {
   if (numberEl.checked) charset += numbers;
   if (symbolEl.checked) charset += symbols;
 
-  if (!charset) {
-    return;
-  }
+  if (!charset) return;
 
   let password = "";
 
@@ -38,20 +38,17 @@ function generatePassword() {
   passwordEl.value = password;
 }
 
-copyEl.addEventListener("click", copyPassword);
-
 function copyPassword() {
   const text = passwordEl.value;
-  // if (navigator.clipboard)
-  return fallbackCopy(text);
 
   try {
     navigator.clipboard.writeText(text);
-  } catch (error) {
-    fallbackCopy(text);
+  } catch {
+    // Fallback copy
+    console.warn("Failed to copy to clipboard, using prompt instead...");
+    window.prompt("Copy to clipboard: Ctrl + C, Enter", text);
   }
 }
 
-function fallbackCopy(text) {
-  window.prompt("Copy to clipboard: Ctrl + C, Enter", text);
-}
+// Generate a password when the page loads
+generatePassword();
