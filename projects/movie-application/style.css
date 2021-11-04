@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: #333;
+}
+
+section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.tumbnail {
+  height: 600px;
+}
+
+.tumbnail article {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.tumbnail img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.featuredContainer {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  transition: transform 300ms ease;
+}
+
+.featuredContainer > article {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: transform 300ms ease;
+}
+
+.featuredContainer > article:hover,
+.featuredContainer > article:focus {
+  transform: scale(1.025);
+  outline: none;
+}
+
+.featuredContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.information {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem 0 0 1rem;
+}
+
+.information img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}

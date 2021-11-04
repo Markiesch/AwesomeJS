@@ -40,4 +40,10 @@ const projects = [
     authorName: "Markiesch",
     authorLink: "https://github.com/Markiesch",
   },
+  {
+    title: "movie-application",
+    description: "",
+    authorName: "Markiesch",
+    authorLink: "https://github.com/Markiesch",
+  },
 ];
