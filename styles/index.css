@@ -8,9 +8,9 @@
    ========================= */
 
 :root {
-  --primary-color: hsl(359, 90%, 62%);
+  --primary-color: hsl(0, 100%, 66%);
   --orange-color: hsl(39, 96%, 68%);
-  --primary-color-2: hsla(359, 90%, 62%, 0.1);
+  --primary-color-2: hsla(0, 100%, 66%, 0.12);
   --text-color: hsl(0, 0%, 18%);
   --body-background: hsl(0, 0%, 100%);
   --grey-text-color: hsla(0, 0%, 0%, 0.6);
