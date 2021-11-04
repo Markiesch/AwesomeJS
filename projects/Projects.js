@@ -28,4 +28,10 @@ const projects = [
     authorName: "Markiesch",
     authorLink: "https://github.com/Markiesch",
   },
+  {
+    title: "newyear-countdown",
+    description: "A countdown to the next first of Januari",
+    authorName: "Markiesch",
+    authorLink: "https://github.com/Markiesch",
+  },
 ];
