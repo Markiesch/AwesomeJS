@@ -92,7 +92,6 @@ function deleteNote(index) {
   openTab("notes--tab");
   saveFile();
   createPages();
-  // openTab(null, "notes--tab");
 }
 
 function recoverNote(index) {
@@ -101,7 +100,6 @@ function recoverNote(index) {
   if (target) target.deleted = false;
   saveFile();
   createPages();
-  // openTab(null, "notes--tab");
 }
 
 function permDeleteNote() {
@@ -116,7 +114,6 @@ function permDeleteNote() {
 
 function updateId() {
   noteData.forEach((element, index) => (element.id = index));
-
   saveFile();
 }
 
@@ -155,8 +152,8 @@ function createPages() {
 function generateCard(container, note, recoverOnClick) {
   container.innerHTML += `
       <div ${recoverOnClick ? `onclick="recoverNote(${note.id})"` : `onclick="openEditor(${note.id})"`}>
-        <h3>${note.title.substring(0, 15)}</h3>
-        <p>${note.text.substring(0, 30)}</p>
+        <h3>${note.title || "Untilted"}</h3>
+        <p>${note.text}</p>
       </div>`;
 }
 
