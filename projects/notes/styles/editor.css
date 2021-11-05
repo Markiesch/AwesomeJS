@@ -48,31 +48,33 @@
 }
 
 .button--container button {
-  cursor: pointer;
-  border-radius: 20px;
-  padding: 0.25em 0.5em;
-  border: none;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
   background-color: transparent;
+  transition: background-color 300ms ease;
+}
+
+.button--container button:hover {
+  background-color: hsl(240, 3%, 85%, 0.1);
 }
 
 .button--container svg {
-  padding: 0.5rem;
-  height: 2rem;
-  border-radius: 50%;
+  height: 90%;
   fill: #d9d9db;
 }
 
-.button--container svg:hover {
-  background-color: currentColor;
+/* Styles for button when a note is marked as favorite */
+.favoriteSvg svg {
+  fill: hsl(355, 75%, 60%);
 }
 
-.favoriteSvg svg {
-  fill: #e64451;
-}
-
-.favoriteSvg svg {
-  fill: #e64451;
+button.favoriteSvg:hover {
+  background-color: hsla(355, 75%, 60%, 0.1);
 }
