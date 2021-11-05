@@ -12,16 +12,16 @@ body {
   display: grid;
   grid-template-columns: auto 1fr;
   color: white;
-  background-color: #1d2027;
+  background-color: hsl(222, 15%, 13%);
 }
 
 .menu {
-  background-color: #28292e;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
-  padding: 1em 0 1em 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 1em 0 1em 1em;
+  background-color: hsl(230, 7%, 17%);
+  box-shadow: 0 0 50px hsla(0, 0%, 0%, 0.3);
 }
 
 .nav div {
@@ -36,8 +36,13 @@ body {
   transition: background-color 200ms ease;
 }
 
-.nav svg,
-.nav p {
+.nav div:hover,
+.nav div:focus,
+.nav .active {
+  background-color: hsl(240, 6%, 13%);
+}
+
+.nav div * {
   pointer-events: none;
 }
 
@@ -45,12 +50,6 @@ body {
   height: 0.9em;
   fill: white;
   margin-right: 1em;
-}
-
-.nav div:hover,
-.nav div:focus,
-.nav .active {
-  background-color: #1e1e22;
 }
 
 .nav p {
@@ -64,7 +63,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1d1e23;
+  background-color: hsl(230, 9%, 13%);
   cursor: pointer;
 }
 
@@ -78,13 +77,13 @@ body {
 }
 
 .list-tab article {
-  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
+  margin-top: 1rem;
 }
 
-.list-tab article div {
+.list-tab div {
   flex: 0 1 300px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -94,12 +93,13 @@ body {
 }
 
 .list-tab div:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: hsla(0, 0%, 0%, 0.2);
 }
 
 .list-tab h3,
 .list-tab p {
   text-overflow: ellipsis;
+  font-size: 1.5rem;
   overflow: hidden;
   resize: none;
   max-width: 100%;
@@ -109,11 +109,7 @@ body {
 .list-tab p {
   font-size: 0.8rem;
   margin-top: 1em;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.list-tab h3 {
-  font-size: 1.5rem;
+  color: hsla(0, 0%, 100%, 0.6);
 }
 
 @media screen and (max-width: 55rem) {
@@ -139,10 +135,11 @@ body {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 45rem) {
   .nav p {
     display: none;
   }
+
   .nav svg {
     margin: 0;
   }
