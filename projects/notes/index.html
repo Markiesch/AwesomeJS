@@ -5,82 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
     <title>Notes App</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/editor.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <main>
-      <article class="menu">
-        <div class="nav">
-          <div onclick="openTab(event, 'notes--tab')" class="notes navItem active">
-            <svg viewBox="0 0 576 512">
+    <article class="menu">
+      <div class="nav">
+        <div onclick="openTab('notes--tab')" class="notes--tab__button navItem active">
+          <svg viewBox="0 0 576 512">
+            <path
+              d="M567.938 243.908L462.25 85.374A48.003 48.003 0 0 0 422.311 64H153.689a48 48 0 0 0-39.938 21.374L8.062 243.908A47.994 47.994 0 0 0 0 270.533V400c0 26.51 21.49 48 48 48h480c26.51 0 48-21.49 48-48V270.533a47.994 47.994 0 0 0-8.062-26.625zM162.252 128h251.497l85.333 128H376l-32 64H232l-32-64H76.918l85.334-128z"
+            ></path>
+          </svg>
+          <p>All Notes</p>
+        </div>
+        <div onclick="openTab('favorites--tab')" class="favorites--tab__button navItem">
+          <svg viewBox="0 0 512 512">
+            <path
+              d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+            ></path>
+          </svg>
+          <p>Favorites</p>
+        </div>
+        <div onclick="openTab('deleted--tab')" class="deleted--tab__button navItem">
+          <svg viewBox="0 0 448 512">
+            <path
+              d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+            ></path>
+          </svg>
+          <p>Deleted</p>
+        </div>
+      </div>
+      <div onclick="createFile()" class="create--new__container">
+        <svg viewBox="0 0 384 512">
+          <path
+            d="M368 224H224V80c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v144H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h144v144c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V288h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"
+          ></path>
+        </svg>
+      </div>
+    </article>
+    <article class="editor">
+      <section class="tab editor--tab">
+        <div class="button--container">
+          <button class="downloadBtn">
+            <svg viewBox="0 0 512 512">
               <path
-                d="M567.938 243.908L462.25 85.374A48.003 48.003 0 0 0 422.311 64H153.689a48 48 0 0 0-39.938 21.374L8.062 243.908A47.994 47.994 0 0 0 0 270.533V400c0 26.51 21.49 48 48 48h480c26.51 0 48-21.49 48-48V270.533a47.994 47.994 0 0 0-8.062-26.625zM162.252 128h251.497l85.333 128H376l-32 64H232l-32-64H76.918l85.334-128z"
+                d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
               ></path>
             </svg>
-            <p>All Notes</p>
-          </div>
-          <div onclick="openTab(event, 'favorites--tab')" class="favorites navItem">
+          </button>
+          <button class="deleteBtn">
+            <svg viewBox="0 0 448 512">
+              <path
+                d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+              ></path>
+            </svg>
+          </button>
+          <button class="toggle--favorite">
             <svg viewBox="0 0 512 512">
               <path
                 d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
               ></path>
             </svg>
-            <p>Favorites</p>
-          </div>
-          <div onclick="openTab(event, 'deleted--tab')" class="Deleted navItem">
-            <svg viewBox="0 0 448 512">
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              ></path>
-            </svg>
-            <p>Deleted</p>
-          </div>
+          </button>
         </div>
-        <div onclick="createFile()" class="create--new__container">
-          <svg viewBox="0 0 384 512">
-            <path
-              d="M368 224H224V80c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v144H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h144v144c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V288h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"
-            ></path>
-          </svg>
-        </div>
-      </article>
-      <article class="editor">
-        <section class="tab editor--tab">
-          <div class="button--container">
-            <button class="downloadBtn">
-              <svg viewBox="0 0 512 512">
-                <path
-                  d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
-                ></path>
-              </svg>
-            </button>
-            <button class="deleteBtn">
-              <svg viewBox="0 0 448 512">
-                <path
-                  d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                ></path>
-              </svg>
-            </button>
-            <button class="toggle--favorite">
-              <svg viewBox="0 0 512 512">
-                <path
-                  d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <input maxlength="30" placeholder="Title" class="note-title" />
-          <textarea placeholder="Text" class="note-text"></textarea>
-        </section>
-        <section class="tab notes--tab"></section>
-        <section class="tab favorites--tab">
-          <h2>Favorite Documents</h2>
-        </section>
-        <section class="tab deleted--tab">
-          <p>Deleted Tab</p>
-        </section>
-      </article>
-    </main>
+        <input maxlength="30" placeholder="Title" class="note-title" />
+        <textarea placeholder="Text" class="note-text"></textarea>
+      </section>
+      <section class="tab list-tab notes--tab"></section>
+      <section class="tab list-tab favorites--tab"></section>
+      <section class="tab list-tab deleted--tab"></section>
+    </article>
   </body>
 </html>

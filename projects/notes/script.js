@@ -39,28 +39,27 @@ function saveFile() {
   localStorage.setItem("note", JSON.stringify(noteData));
 }
 
-function openTab(event, tabName, editorID) {
+function openTab(tabName) {
   createPages();
 
   // Activate selected tab
   for (const tab of tabs) tab.style.display = "none";
-  document.querySelector("." + tabName).style.display = "flex";
+  document.querySelector("." + tabName).style.display = "block";
 
-  // Activate active class to clicked nav item
+  if (tabName === "editor--tab") return;
+
   for (const navItem of navItems) navItem.classList.remove("active");
-  event.target.classList.add("active");
-
-  // Check if
-  if (editorID === null) return;
-  titleEl.value = noteData[currentTab].title;
-  textEl.value = noteData[currentTab].text;
-
-  loadFavorite();
+  document.querySelector("." + tabName + "__button").classList.add("active");
 }
 
 function openEditor(editorID) {
   currentTab = editorID;
-  openTab(event, "editor--tab", editorID);
+  openTab("editor--tab");
+
+  titleEl.value = noteData[currentTab].title;
+  textEl.value = noteData[currentTab].text;
+
+  loadFavorite();
 }
 
 function createFile() {
@@ -84,14 +83,33 @@ function loadFavorite() {
 }
 
 const deleteEl = document.querySelector(".deleteBtn");
-deleteEl.addEventListener("click", permDeleteNote);
+deleteEl.addEventListener("click", () => deleteNote());
 
-function permDeleteNote(e) {
+function deleteNote(index) {
+  const targetId = index ?? currentTab;
+  const target = noteData.find((note) => note.id === targetId);
+  if (target) target.deleted = true;
+  openTab("notes--tab");
+  saveFile();
+  createPages();
+  // openTab(null, "notes--tab");
+}
+
+function recoverNote(index) {
+  const targetId = index ?? currentTab;
+  const target = noteData.find((note) => note.id === targetId);
+  if (target) target.deleted = false;
+  saveFile();
+  createPages();
+  // openTab(null, "notes--tab");
+}
+
+function permDeleteNote() {
   const index = currentTab;
   if (currentTab === false) return;
   noteData.splice(index, 1);
   currentTab = false;
-  openTab(e, "notes--tab");
+  openTab("notes--tab");
   saveFile();
   updateId();
 }
@@ -104,33 +122,28 @@ function updateId() {
 
 // Create page helpers
 function createNotePage() {
-  if (noteData.length == 0) return (notesTab.innerHTML = `<h4>It looks like you dont have any files</h4>`);
+  const notes = noteData.filter((note) => !note.deleted);
+  if (!notes.length) return (notesTab.innerHTML = `<h4>It looks like you dont have any files</h4>`);
 
-  notesTab.innerHTML = "";
-  for (const note of noteData) {
-    if (note.deleted) continue;
-    generateCard(notesTab, note);
-  }
+  notesTab.innerHTML = "<h2>All documents</h2><article></article>";
+  for (const note of notes) generateCard(notesTab.querySelector("article"), note);
 }
 
 function createFavoritePage() {
-  if (noteData.length == 0) return (favoritesTab.innerHTML = `<h4>It looks like you dont have any files</h4>`);
+  const favoriteNotes = noteData.filter((note) => note.favorite);
+  if (favoriteNotes.length == 0) return (favoritesTab.innerHTML = `<h4>It looks like you dont have any favorite files yet</h4>`);
 
-  favoritesTab.innerHTML = "";
-  for (const note of noteData) {
-    if (!note.favorite) continue;
-    generateCard(favoritesTab, note);
-  }
+  favoritesTab.innerHTML = "<h2>Favorite Notes</h2><article></article>";
+  for (const note of favoriteNotes) generateCard(favoritesTab.querySelector("article"), note);
 }
 
 function createDeletedPage() {
-  if (!noteData.length) return (deletedTab.innerHTML = "<h4>It looks like you dont have any files</h4>");
+  const deletedNotes = noteData.filter((note) => note.deleted);
+  if (!deletedNotes.length) return (deletedTab.innerHTML = "<h4>It looks like you dont have any deleted files yet</h4>");
 
-  deletedTab.innerHTML = "";
-  for (const note of noteData) {
-    if (!note.deleted) continue;
-    generateCard(deletedTab, note);
-  }
+  deletedTab.innerHTML = "<h2>Deleted Notes</h2><article></article>";
+
+  for (const note of deletedNotes) generateCard(deletedTab.querySelector("article"), note, true);
 }
 
 function createPages() {
@@ -139,10 +152,9 @@ function createPages() {
   createDeletedPage();
 }
 
-function generateCard(container, note) {
-  const index = noteData.indexOf(note);
+function generateCard(container, note, recoverOnClick) {
   container.innerHTML += `
-      <div onclick='openEditor("${index}")'>
+      <div ${recoverOnClick ? `onclick="recoverNote(${note.id})"` : `onclick="openEditor(${note.id})"`}>
         <h3>${note.title.substring(0, 15)}</h3>
         <p>${note.text.substring(0, 30)}</p>
       </div>`;
