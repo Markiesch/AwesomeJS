@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  color: white;
+  background-color: #1d2027;
+}
+
+.menu {
+  background-color: #28292e;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  padding: 1em 0 1em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav div {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5em;
+  padding-right: 4rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.75rem 0 0 0.75rem;
+  transition: background-color 200ms ease;
+}
+
+.nav svg,
+.nav p {
+  pointer-events: none;
+}
+
+.nav svg {
+  height: 0.9em;
+  fill: white;
+  margin-right: 1em;
+}
+
+.nav div:hover,
+.nav div:focus,
+.nav .active {
+  background-color: #1e1e22;
+}
+
+.nav p {
+  font-size: 0.8em;
+}
+
+.create--new__container {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1e23;
+  cursor: pointer;
+}
+
+.create--new__container svg {
+  fill: white;
+  height: 75%;
+}
+
+.tab:not(.notes--tab) {
+  display: none;
+}
+
+.list-tab article {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.list-tab article div {
+  flex: 0 1 300px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.list-tab div:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.list-tab h3,
+.list-tab p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  resize: none;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.list-tab p {
+  font-size: 0.8rem;
+  margin-top: 1em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.list-tab h3 {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 55rem) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .menu {
+    padding: 0.5em;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav div {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nav p {
+    display: none;
+  }
+  .nav svg {
+    margin: 0;
+  }
+}

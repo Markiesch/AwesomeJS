@@ -1,0 +1,78 @@
+/* ===========================
+   ====== Editor styles ======
+   =========================== */
+.editor {
+  padding: 2em;
+  position: relative;
+}
+
+.editor--tab {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.editor input,
+.editor textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.editor input {
+  margin-bottom: 0.5em;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.editor textarea {
+  resize: none;
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding-right: 1em;
+  flex: 1 1 100px;
+}
+
+.editor input:focus,
+.editor textarea:focus {
+  outline: none;
+}
+
+.button--container {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: flex-end;
+}
+
+.button--container button {
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 0.25em 0.5em;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.button--container svg {
+  padding: 0.5rem;
+  height: 2rem;
+  border-radius: 50%;
+  fill: #d9d9db;
+}
+
+.button--container svg:hover {
+  background-color: currentColor;
+}
+
+.favoriteSvg svg {
+  fill: #e64451;
+}
+
+.favoriteSvg svg {
+  fill: #e64451;
+}
