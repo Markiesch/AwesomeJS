@@ -148,19 +148,18 @@ main {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
-.projects--section .filler {
-  box-shadow: none;
-}
-
 .projects--section .image--container {
   background-color: #f5f5f5;
-  overflow: hidden;
-  height: 10rem;
   display: block;
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
 }
 
 .projects--section img {
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -168,19 +167,34 @@ main {
 }
 
 .projects--section .image--container:hover img {
-  transform: scale(1.2) rotate(3deg);
+  transform: scale(1.1) rotate(3deg);
 }
 
 .projects--section .information {
   padding: 1rem;
 }
 
-.projects--section p {
-  margin: 1rem 0;
+.description {
+  padding: 1em 0;
 }
 
-.projects--section .link {
+.link--container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link--container svg {
+  height: 1.2em;
+  fill: var(--grey-text-color);
+}
+
+.author {
+  font-style: italic;
+}
+
+.author a {
+  font-weight: 600;
   color: inherit;
-  text-align: right;
-  display: block;
+  font-style: normal;
+  text-decoration: none;
 }
