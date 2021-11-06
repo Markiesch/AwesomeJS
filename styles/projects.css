@@ -1,0 +1,26 @@
+.filter--section article {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+}
+
+.filter--section div {
+  position: relative;
+}
+
+.filter--section input {
+  width: 100%;
+  border: none;
+  margin-top: 1rem;
+  padding: 0.25rem;
+}
+
+.filter--section svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  height: 1em;
+}
