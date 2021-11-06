@@ -76,7 +76,7 @@ main {
 .hero h4 {
   color: var(--primary-color);
   background-color: var(--primary-color-2);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   display: inline-block;
   padding: 0.75em;
@@ -117,13 +117,6 @@ main {
   margin-right: 1rem;
 }
 
-.projects--section {
-  padding-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
 .fade-in {
   animation: fade-in 600ms ease forwards;
   transform: translateY(50px);
@@ -140,9 +133,14 @@ main {
 /* ===============================
    ======= Project section =======
    =============================== */
+.projects--section {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: 1rem;
+}
 
 .projects--section article {
-  flex: 1 1 400px;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
@@ -183,11 +181,6 @@ main {
   justify-content: space-between;
 }
 
-.link--container svg {
-  height: 1.2em;
-  fill: var(--grey-text-color);
-}
-
 .author {
   font-style: italic;
 }
@@ -197,4 +190,15 @@ main {
   color: inherit;
   font-style: normal;
   text-decoration: none;
+}
+
+.link--container svg {
+  height: 1.2em;
+  fill: var(--grey-text-color);
+}
+
+@media screen and (max-width: 30rem) {
+  .projects--section {
+    grid-template-columns: 1fr;
+  }
 }

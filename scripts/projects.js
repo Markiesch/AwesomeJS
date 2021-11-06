@@ -72,6 +72,3 @@ for (const project of projects) {
     </article>
   `;
 }
-
-// Inserting fillers
-projectSection.innerHTML += "<article class='filler'></article><article class='filler'></article>";
