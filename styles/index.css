@@ -30,6 +30,16 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--primary-color-2) 15%, transparent);
+  z-index: -1;
+}
+
 :focus {
   outline: none;
 }
@@ -45,10 +55,6 @@ footer {
   max-width: 1440px;
   padding: 0 1rem;
   margin: 0 auto;
-}
-
-main {
-  padding-top: var(--header-height);
 }
 
 /* ============================
@@ -131,8 +137,8 @@ main {
 }
 
 /* ===============================
-   ======= Project section =======
-   =============================== */
+======= Project section =======
+=============================== */
 .projects--section {
   padding-top: 1rem;
   display: grid;
@@ -142,6 +148,7 @@ main {
 
 .projects--section article {
   border-radius: 5px;
+  background-color: white;
   overflow: hidden;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
@@ -173,7 +180,7 @@ main {
 }
 
 .description {
-  padding: 1em 0;
+  padding: 0.5rem 0 1rem 0;
 }
 
 .link--container {
