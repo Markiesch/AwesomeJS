@@ -11,20 +11,14 @@ const template = {
 
 const projects = [
   {
-    title: "password-generator",
-    description: "Generate random passwords!",
+    title: "notes",
+    description: "A notes web-application where you can store and download your favorite notes.",
     authorName: "Markiesch",
     authorLink: "https://github.com/Markiesch",
   },
   {
-    title: "progressbar",
-    description: "A simple progress bar that you can modify with buttons!",
-    authorName: "Markiesch",
-    authorLink: "https://github.com/Markiesch",
-  },
-  {
-    title: "colorflipper",
-    description: "Generate random colors with a click on a button!",
+    title: "todo",
+    description: "Simple todo app using localstorage",
     authorName: "Markiesch",
     authorLink: "https://github.com/Markiesch",
   },
@@ -41,8 +35,20 @@ const projects = [
     authorLink: "https://github.com/Markiesch",
   },
   {
-    title: "notes",
-    description: "A notes web-application where you can store and download your favorite notes.",
+    title: "password-generator",
+    description: "Generate random passwords!",
+    authorName: "Markiesch",
+    authorLink: "https://github.com/Markiesch",
+  },
+  {
+    title: "progressbar",
+    description: "A simple progress bar that you can modify with buttons!",
+    authorName: "Markiesch",
+    authorLink: "https://github.com/Markiesch",
+  },
+  {
+    title: "colorflipper",
+    description: "Generate random colors with a click on a button!",
     authorName: "Markiesch",
     authorLink: "https://github.com/Markiesch",
   },
