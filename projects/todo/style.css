@@ -149,7 +149,7 @@ h1 {
 }
 
 .todo--container {
-  margin-top: 1rem;
+  margin: 1rem 0 2rem 0;
 }
 
 article {
@@ -159,6 +159,10 @@ article {
   padding: 1rem;
   margin-bottom: 0.5rem;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.done-todos h3 {
+  text-decoration: line-through;
 }
 
 .button--container button {
