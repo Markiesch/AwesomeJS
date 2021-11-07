@@ -14,6 +14,16 @@
 <br />
 <br />
 
+|  #  |                                            Source code                                             |                                   Live Demo                                    |
+| :-: | :------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------: |
+| 01  |            [Notes app](https://github.com/Markiesch/AwesomeJS/tree/main/projects/notes)            |       [Live Demo](https://markiesch.github.io/AwesomeJS/projects/notes)        |
+| 02  |             [Todo app](https://github.com/Markiesch/AwesomeJS/tree/main/projects/todo)             |        [Live Demo](https://markiesch.github.io/AwesomeJS/projects/todo)        |
+| 03  |  [Newyear Countdown](https://github.com/Markiesch/AwesomeJS/tree/main/projects/newyear-countdown)  | [Live Demo](https://markiesch.github.io/AwesomeJS/projects/newyear-countdown)  |
+| 04  |    [Clamp generator](https://github.com/Markiesch/AwesomeJS/tree/main/projects/clamp-generator)    |  [Live Demo](https://markiesch.github.io/AwesomeJS/projects/clamp-generator)   |
+| 05  | [Password generator](https://github.com/Markiesch/AwesomeJS/tree/main/projects/password-generator) | [Live Demo](https://markiesch.github.io/AwesomeJS/projects/password-generator) |
+| 06  |        [Progressbar](https://github.com/Markiesch/AwesomeJS/tree/main/projects/progressbar)        |    [Live Demo](https://markiesch.github.io/AwesomeJS/projects/progressbar)     |
+| 07  |       [Colorflipper](https://github.com/Markiesch/AwesomeJS/tree/main/projects/colorflipper)       |    [Live Demo](https://markiesch.github.io/AwesomeJS/projects/colorflipper)    |
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
