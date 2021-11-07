@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo app</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="no-todos">
+        <div>
+          <h1>Todo App</h1>
+          <img src="assets/no-todos.svg" alt="no todos" />
+        </div>
+        <div>
+          <p>What's on your mind?</p>
+          <input type="text" placeholder="new todo" />
+          <button>Create first todo</button>
+        </div>
+      </section>
+
+      <section class="todo--section">
+        <div class="create-todo">
+          <h2>What's on your mind today?</h2>
+          <div class="input--container">
+            <button>+</button>
+            <input type="text" placeholder="Add a task" />
+          </div>
+        </div>
+
+        <p>Todos</p>
+        <div class="todo--container todos"></div>
+
+        <p>Done</p>
+        <div class="todo--container done-todos"></div>
+      </section>
+    </main>
+  </body>
+</html>
