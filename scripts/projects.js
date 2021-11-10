@@ -41,6 +41,12 @@ const projects = [
     authorLink: "https://github.com/Markiesch",
   },
   {
+    title: "github-profiles",
+    description: "Get several info about any github-user.",
+    authorName: "Markiesch",
+    authorLink: "https://github.com/Markiesch",
+  },
+  {
     title: "progressbar",
     description: "A simple progress bar that you can modify with buttons!",
     authorName: "Markiesch",
