@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h3 class="counter"><span>0</span> turns</h3>
+        <button class="link information">
+          <svg viewBox="0 0 192 512">
+            <path
+              d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
+            ></path>
+          </svg>
+        </button>
+        <h3 class="timer"><span>0</span>s</h3>
+      </header>
+      <section>
+        <div class="deck"></div>
+      </section>
+    </main>
+
+    <article class="victory overlay">
+      <div>
+        <img src="assets/victory.png" alt="Victory" />
+      </div>
+      <h2>Victory!</h2>
+      <button>PLAY AGAIN</button>
+    </article>
+
+    <article class="tutorial overlay">
+      <div><img src="assets/tutorial.png" alt="Tutorial" /></div>
+      <h2>How to play</h2>
+      <p>
+        A player makes a match if the two cards turned picture-side-up are identical. When a match is made, the cards stay turned around and the next turn starts. When the match is wrong the cards are
+        turned back to their original state and the game continuous. You win when all cards are succesfully turned around.
+      </p>
+      <button>PLAY!</button>
+    </article>
+  </body>
+</html>

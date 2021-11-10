@@ -23,6 +23,12 @@ const projects = [
     authorLink: "https://github.com/Markiesch",
   },
   {
+    title: "memorygame",
+    description: "The classic memory game, with your favorite fruits",
+    authorName: "Markiesch",
+    authorLink: "https://github.com/Markiesch",
+  },
+  {
     title: "newyear-countdown",
     description: "A countdown to the next first of Januari",
     authorName: "Markiesch",
@@ -77,7 +83,7 @@ function generateProjects() {
     <img src="assets/projects/${project.title}.png" alt="${project.title}" />
     </a>
     <div class="information">
-    <h2 class="title">${project.title}</h2>
+    <h2 class="title">${project.title.replace("-", " ")}</h2>
     <p class="paragraph description">${project.description}</p>
     <div class="link--container">
     <p class="paragraph author">by <a href="${project.authorLink}" aria-label="author" target="_blank" rel="noopener">${project.authorName}</a></p>
