@@ -79,16 +79,6 @@ footer {
   margin: 0 auto;
 }
 
-.hero h4 {
-  color: var(--primary-color);
-  background-color: var(--primary-color-2);
-  font-size: 0.9rem;
-  font-weight: 500;
-  display: inline-block;
-  padding: 0.75em;
-  border-radius: 50px;
-}
-
 .hero h1 {
   color: var(--text-color);
   max-width: 19ch;
@@ -96,17 +86,12 @@ footer {
   line-height: 1.1;
   font-family: serif;
   font-size: clamp(2.1rem, 1.2rem + 3.5vw, 3.8rem);
-  animation-delay: 200ms;
-}
-
-.hero span {
-  color: var(--primary-color);
 }
 
 .hero p {
   max-width: 55ch;
   margin: 1em 0 2em 0;
-  animation-delay: 400ms;
+  animation-delay: 300ms;
 }
 
 .hero .cta {
@@ -114,13 +99,27 @@ footer {
   animation-delay: 600ms;
 }
 
+.hero .cta svg {
+  height: 1.5rem;
+  fill: currentColor;
+  margin-right: 0.5rem;
+}
+
 .hero a {
-  display: inline-block;
+  display: inline-flex;
   font-size: 18px;
   color: var(--primary-color);
   text-decoration: none;
   animation-delay: 600ms;
   margin-right: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  align-items: center;
+}
+
+.hero .projects--link {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .fade-in {
