@@ -5,21 +5,20 @@ const inputs = document.querySelectorAll("input");
 let result;
 
 output.addEventListener("click", copy);
-for (const input of inputs) input.addEventListener("input", clampBuilder);
+for (const input of inputs) input.addEventListener("input", generateResult);
 
 function copy() {
-  const text = passwordEl.value;
+  const text = resultEl.innerHTML;
 
   try {
     navigator.clipboard.writeText(text);
   } catch {
-    // Fallback copy
     console.warn("Failed to copy to clipboard, using prompt instead...");
     window.prompt("Copy to clipboard: Ctrl + C, Enter", text);
   }
 }
 
-function clampBuilder() {
+function generateResult() {
   const minWidthPx = +document.querySelector("#minWidth").value;
   const maxWidthPx = +document.querySelector("#maxWidth").value;
   const minFontSize = +document.querySelector("#minFont").value;
@@ -35,4 +34,4 @@ function clampBuilder() {
   resultEl.innerHTML = `clamp(${minFontSize}rem, ${yAxisIntersection}rem + ${slope * 100}vw, ${maxFontSize}rem)`;
 }
 
-clampBuilder();
+generateResult();
