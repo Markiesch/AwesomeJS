@@ -24,6 +24,10 @@ main {
   margin: 1em;
 }
 
+h1 {
+  padding-bottom: 0.5rem;
+}
+
 input {
   padding: 0.75em;
   background-color: #f6f7fb;

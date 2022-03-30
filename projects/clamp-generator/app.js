@@ -31,7 +31,11 @@ function generateResult() {
   const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
   const yAxisIntersection = -minWidth * slope + minFontSize;
 
-  resultEl.innerHTML = `clamp(${minFontSize}rem, ${yAxisIntersection}rem + ${slope * 100}vw, ${maxFontSize}rem)`;
+  resultEl.innerHTML = `clamp(${fixNumber(minFontSize)}rem, ${fixNumber(yAxisIntersection)}rem + ${fixNumber(slope * 100)}vw, ${fixNumber(maxFontSize)}rem)`;
+}
+
+function fixNumber(value) {
+  return Math.round(value * 100) / 100;
 }
 
 generateResult();
